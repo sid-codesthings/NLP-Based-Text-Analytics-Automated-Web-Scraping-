@@ -1,0 +1,20 @@
+Instructions documentation
+
+1. The objective was to perform web-scraping and sentiment analysis on some articles given in url links. Also we computed multiple sentiment and readability metrics.
+The workflow looks like Web scraping -> Text Cleaning -> NLP Analysis -> Output generation.
+
+To get this project moving, I started by scraping the article content from the URLs in the input list. I used Python to grab just the main titles and the actual body of the articles—basically making sure to strip out all the junk like headers, footers, and those annoying ads that pop up. After saving the raw text, I had to clean it up quite a bit. This involved breaking the text down into individual words (tokenization) and then scrubbing out all the punctuation and stopwords so the data was actually usable. With the 'clean' word sets ready, I ran the NLP part of the analysis. I focused on two main areas: sentiment (figuring out positive/negative scores, polarity, and how subjective the writing was) and readability. For the readability stuff, I calculated things like the Fog Index and average sentence length to see how complex the writing style was. Once all the math was done, I dumped all those metrics into the final output CSV, making sure everything lined up exactly with the format you asked for.
+
+Diificulties faced :
+
+I) I used the requests library to ping each URL and pull the data. Since a lot of these sites tend to block automated scrapers, I had to set up some browser like headers and manage the sessions. This was mostly to get around those '406 errors' and make sure the server thought a real person was visiting the page.
+
+ii) I noticed that a few of the URLs came back totally empty or just blocked my scraper entirely. To keep the script from crashing when it hit those dead ends, I set it up so that any failed link would just return zeros for all 13 metrics. It’s not ideal to have missing data, but it prevented those annoying 'division by zero' errors and made sure the final CSV stayed perfectly organized.
+
+
+2. Paste the Code.py file in a folder/directory where your Input.xlsx , Master Dictionary text files and Stop-Word text files are present. Then open the cmd terminal from that directory and type this command -> python nlp_analysis.py
+
+3. Dependencies/Packages required : openpyxl , pandas , requests , beautifulsoup4 , nltk (Make sure Python is installed in your system)
+
+
+
