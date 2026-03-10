@@ -82,7 +82,7 @@ The system extracts article content from web pages, processes the text using NLP
    * Final analytics results are exported to:
 
      ```
-     Output_Data_submission_final.xlsx
+     Output_Data_final_analysed.xlsx
      ```
 
 ---
